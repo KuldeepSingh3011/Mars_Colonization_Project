@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Path Finding Visualiser</title>    
+        <link href="Index.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <body onload="">
+	
+	
+		<main id="main">
+			<nav id="nav">
+				<h1>Pathfinding Visualizer</h1>
+				<ul class="dropdown">
+					<li class="dropbtn"><button class="menubtn">Algorithms</button>
+						<ul class="alg">
+							<li><button id="bfsbtn">BFS</button></li>
+					        <li><button id="bidirbfsbtn">BI Directional BFS</button></li>
+					        <li><button id="astarbtn">A* Search</button></li>
+					        <li><button id="bidirastarbtn">BI Directional A* Search</button></li>
+					        <li><button id="bestfirstsearchbtn">Best First Search</button></li>
+					        <li><button id="bidirbestfirstbtn">BI Directional Best First Search </button></li>
+					        <li><button id="dijkstrabtn">Dijkstra</button></li>
+					        <li><button id="bidirdijkstrabtn">BI Directional Dijkstra</button></li>
+					    </ul>
+					</li>
+
+					<li class="dropbtn"><button class="menubtn">Heuristics</button>
+						<ul>
+							<li><button id="man_heu">Manhattan</button></li>
+					        <li><button id="euc_heu">Euclidean</button></li>
+					        <li><button id="oct_heu">Octile</button></li>
+					        <li><button id="che_heu">Chebyshev</button></li>
+					    </ul>
+					</li>
+
+					<li class="dropbtn"><button class="menubtn">Diagonal Movement</button>
+						<ul>
+							<li><button id="allow">Allow</button></li>
+							<li><button id="disallow">Don't Allow</button></li>
+						</ul>
+					</li>
+
+					<li class="dropbtn"><button class="menubtn" id="clrbtn">Clear Walls</button></li>
+					<li class="dropbtn"><button class="menubtn" id="start">Start</button></li>
+
+					<div class="info">
+						<p id="algoname">Algorithm: BFS</p>
+						<p id="heuristicname">Heuristic: Manhattan</p>
+						<p id="diagonalstatus">Diagonal movement: Disallowed</p>
+					</div>
+
+				</ul>
+
+				<div id="legend">
+					<div class="single"><div class="block1"></div><p>Start</p></div>
+					<div class="single"><div class="block2"></div><p>Goal</p></div>
+					<div class="single"><div class="block3"></div><p>Walls</p></div>
+				</div>
+					
+			</nav>
+
+			
+			<div id="container">
+				<div id="instructions_panel" class="panel">
+					<header>
+					  <h2 class="header_title">Instructions</h2>
+					  <span id="hide_instructions">hide</span>
+					</header>
+					Click within the <span class="white">white</span> grid and drag your mouse to draw obstacles. <br>
+					Drag the <span class="green">green</span> node to set the start position. <br>
+					Drag the <span class="purple">purple</span> node to set the end position. <br>
+					Click and Drag the <span class="black">black</span> node to draw the obstacles. <br>
+					Choose an algorithm from the navigation bar. <br>
+					Choose the heuristic and diagonal movement for that algorithm. <br>
+					Heuristic is only for A*, Bidirectional A*, Best first & Bidirectional Best first.<br>
+					Click Start Search in the navigation bar to start finding the path.<br>
+					The BFS algorithm is Non-weighted so diagnonal distance is taken as 1 unit.<br>
+					In all other Algorithms except BFS diagnonal distance is of Root(2) units and <br>
+					perppendicular distances are of 1 unit. 
+				  </div>
+				<canvas id="grid"></canvas>
+				<div id="stats"></div>
+				
+			</div>
+		</main>
+		
+        
+        <!-- Scripts -->
+        <script src="priorityQueue.js" type="text/javascript"></script>
+        <script src="bfs.js" type="text/javascript"></script>
+	    <script src="biDirBfs.js" type="text/javascript"></script>
+	    <script src="aStar.js" type="text/javascript"></script>
+        <script src="biDiraStar.js" type="text/javascript"></script>
+        <script src="bestFirstSearch.js" type="text/javascript"></script>
+        <script src="biDirbestFirst.js" type="text/javascript"></script>
+        <script src="Dijkstra.js" type="text/javascript"></script>
+        <script src="biDirDijkstra.js" type="text/javascript"></script>
+        <script src="Index.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script> 
+			$(document).ready(function(){
+			$("#hide_instructions").click(function(){
+				$("#instructions_panel").slideUp("slow");
+			});
+			});
+		</script>
+
+    	<script>
+    		constructGrid();
+		</script>
+
+    </body>
+</html>
+

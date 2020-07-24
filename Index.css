@@ -1,0 +1,280 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* Contains everything */
+#main {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+}
+
+/* Menu */
+#nav {
+	padding: 0 10px 0 10px;
+	height: 50px;
+	background-color: #34495e;
+	box-shadow: 0px 2px 5px grey;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: start;
+	position: relative;
+}
+
+h1 {
+	margin-right: 50px;
+	font-family: sans-serif;
+	font-size: 20px;
+}
+
+ul {
+	height: 50px;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.dropdown {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	flex: 1;
+}
+
+
+.dropbtn {
+	height: 30px;
+	width: 150px;
+	transition-duration: 0.5s;
+	position: relative;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.info {
+	display: flex;
+	height: 50px;
+	margin-left: auto;
+	align-items: center;
+}
+
+.info > p {
+	padding: 0;
+	margin: 0;
+	font-size: 15px;	
+	margin-left: 10px;
+	padding-right: 10px;
+	border-right: 1px solid white;
+}
+
+.dropbtn .menubtn {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.dropbtn .info {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+.dropbtn:hover {
+	cursor: pointer;
+	background-color: #1abc9c;
+	border-radius: 10px;
+}
+
+.dropbtn ul {
+  visibility: hidden;
+  opacity: 1;
+  position: absolute;
+  left: 0;
+  transition: all 0.5s ease;
+  display: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.dropbtn:hover > ul {
+  visibility: visible;
+  display: flex;
+  cursor: pointer;
+}
+
+.dropbtn ul:hover {
+	visibility: visible;
+  	cursor: pointer;
+	display: flex;
+}
+
+.dropbtn ul li {
+	width: 100%;
+	height: auto;
+}
+
+.dropbtn ul li:hover button {
+	cursor: pointer;
+}
+
+.dropbtn ul li button {
+	/*width: 200%;*/
+	width: 150%;
+	height: 50px;
+	background-color: #34495e;
+	border: none;
+	color: white;
+	font-weight: 500;
+	font-size: 16px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.dropbtn ul li button:hover {
+	background-color: #1abc9c;	
+}
+
+
+#legend {
+	position: absolute;
+	right: 0;
+	bottom: -100px;
+	width: 100px;
+	height: 100px;
+}
+
+#legend .single {
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+	padding: 0;
+	align-items: center;
+	justify-content: start;
+}
+
+.single p {
+	color: black;
+	font-weight: bold;
+	margin: 0;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding: 0;
+}
+
+.block1 {
+	width: 20px;
+	height: 20px;
+	margin-top: 10px;
+	background-color: #008000;
+}
+
+.block2 {
+	margin-top: 10px;
+	width: 20px;
+	height: 20px;
+	background-color: #9a27cf;
+}
+
+.block3 {
+	margin-top: 10px;
+	width: 20px;
+	height: 20px;
+	background-color: #000;
+}
+
+
+/* Grid container */
+
+.header_title {
+    font-size: 120%;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-top: -10px;
+}
+
+
+.panel {
+    position: fixed;
+    padding: 20px;
+    background-color: #34495e;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	cursor: default;
+	opacity: 0.8;
+}
+
+#instructions_panel {
+    top: 65px;
+    left: 20px;
+    width: 520px;
+}
+
+#hide_instructions {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    font-size: 90%;
+    cursor: pointer;
+}
+
+#hide_instruction:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.white {
+    color: #fff;
+}
+
+.green {
+    color: #0d0;
+}
+
+.purple {
+    color: purple;
+}
+
+.black {
+    color: black;
+}
+
+#container {
+	flex: 1 1 auto;
+	position: relative;
+}
+
+#grid {
+
+}
+
+#stats {
+    position: fixed;
+    bottom: 40px;
+    right: 35px;
+    color: #34495e;
+    font-size: 25px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
